@@ -50,6 +50,9 @@ public class PlayeShooting : MonoBehaviour {
 
 		if (Physics.Raycast(gunRay, out shootHit, gunRange, shootableMask))
 		{
+			EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
+            if(enemyHealth.health > 0)
+			    enemyHealth.takeDamage(damagePerBullet);
 			shootLine.SetPosition(1, shootHit.point);
 		}
 		else

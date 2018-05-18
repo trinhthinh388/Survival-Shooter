@@ -7,11 +7,13 @@ public class EnemyAttack : MonoBehaviour {
 	public float damage = 10f;
 	public float timeBetweenAttack = 0.5f;
 	PlayerHealth playerHealth;
+	EnemyHealth enemyHealth;
 	bool isInRange;
 	float timer = 0f;
 	Animator animator;
 	// Use this for initialization
 	void Start () {
+		enemyHealth = GetComponent<EnemyHealth>();
 		playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 		animator = GetComponent<Animator>();
 	}
@@ -19,7 +21,7 @@ public class EnemyAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(playerHealth.health > 0 && isInRange && timer >= timeBetweenAttack)
+		if(playerHealth.health > 0 && isInRange && timer >= timeBetweenAttack && !enemyHealth.isDead)
 		{
 			Attack();
 		}
