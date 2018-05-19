@@ -21,15 +21,14 @@ public class EnemyAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(playerHealth.health > 0 && isInRange && timer >= timeBetweenAttack && !enemyHealth.isDead)
-		{
-			Attack();
-		}
+		//if(playerHealth.health > 0 && isInRange && timer >= timeBetweenAttack && !enemyHealth.isDead)
+		//{
+		//	Attack();
+		//}
         if(playerHealth.health <= 0)
 		{
 			animator.SetTrigger("PlayerDead");
 		}
-		Animating();
 	}
 
     void Attack()
@@ -39,22 +38,18 @@ public class EnemyAttack : MonoBehaviour {
 
 	}
 
-    void Animating()
-	{
-		if(isInRange)
-			animator.SetBool("InRange", true);
-		else
-		{
-			animator.SetBool("InRange", false);
-		}
-	}
-
 	void OnTriggerEnter(Collider other)
 	{
 		isInRange = true;
+		if (playerHealth.health > 0 && isInRange && timer >= timeBetweenAttack && !enemyHealth.isDead)
+        {
+            Attack();
+			animator.SetBool("InRange", true);
+        }
 	}
 	private void OnTriggerExit(Collider other)
 	{
 		isInRange = false;
+		animator.SetBool("InRange", false);
 	}
 }
