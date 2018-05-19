@@ -8,6 +8,7 @@ public class PlayeShooting : MonoBehaviour {
 	public float TimeBetweenBullet;
 	public float gunRange;
 	public Light faceLight;
+	AudioSource gunShot;
 	float timer;
 	Ray gunRay = new Ray();
 	RaycastHit shootHit;
@@ -17,18 +18,20 @@ public class PlayeShooting : MonoBehaviour {
 	float effectsDisplayTime = 0.2f;
 
 
+
 	// Use this for initialization
 	void Awake () {
 		shootableMask = LayerMask.GetMask("Shootable");
 		shootLine = GetComponent<LineRenderer>();
 		gunLight = GetComponent<Light>();
+		gunShot = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
 		if (Input.GetMouseButton(0) && timer >= TimeBetweenBullet && Time.timeScale != 0)
-		{
+		{         
 			shoot();
 		}
         if(timer >= TimeBetweenBullet * effectsDisplayTime)
@@ -40,13 +43,15 @@ public class PlayeShooting : MonoBehaviour {
     void shoot()
 	{
 		timer = 0;
+		gunShot.Stop();
+		gunShot.Play();
 		faceLight.enabled = true;
 		gunLight.enabled = true;
 		shootLine.enabled = true;
         shootLine.SetPosition(0, transform.position);
 
         gunRay.origin = transform.position;
-        gunRay.direction = transform.forward;
+        gunRay.direction = transform.forward;      
 
 		if (Physics.Raycast(gunRay, out shootHit, gunRange, shootableMask))
 		{

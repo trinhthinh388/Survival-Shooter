@@ -12,7 +12,7 @@ public class SpawnEnemyController : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		Instantiate(enemyPreFabs, SpawnPoint.position, SpawnPoint.rotation);
+		//Instantiate(enemyPreFabs, SpawnPoint.position, SpawnPoint.rotation);
 	}
 
 	// Update is called once per frame
