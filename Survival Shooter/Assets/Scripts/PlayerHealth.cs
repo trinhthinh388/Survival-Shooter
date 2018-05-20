@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour {
         if (isDead)
             return;
         currentHealth -= amount;
-        if (currentHealth <= 0)
+        if (currentHealth < 0)
         {
             Dead();
         }

@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4782487888283086, guid: 68f0cc9ca767b43b48a7f7366597a77c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -7.68
       objectReference: {fileID: 0}
     - target: {fileID: 4782487888283086, guid: 68f0cc9ca767b43b48a7f7366597a77c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4782487888283086, guid: 68f0cc9ca767b43b48a7f7366597a77c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -221,7 +221,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 60
-  field of view: 60
+  field of view: 50
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -246,7 +246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 301219180}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: -10.1, y: 3.96, z: 15.09}
+  m_LocalPosition: {x: -7.91, y: 8.3, z: 10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 170108093}
   smoothSpeed: 100
---- !u!1001 &631734053
+--- !u!1001 &476709943
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -302,7 +302,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906419066315288, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_Name
+      value: Lumberjack1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
@@ -348,6 +364,60 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: afcaa5bb2a7a14c43a5d182c5d80004a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &871087402
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1101810625
 GameObject:
@@ -578,6 +648,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &1400218479
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906419066315288, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_Name
+      value: Lumberjack1 (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1486775475
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +745,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1001 &1799591278
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 15.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1906419066315288, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_Name
+      value: Lumberjack1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4787759286411618, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 897d9bc9b32114ed5aca3c970f74cdd4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1870540369
 GameObject:
   m_ObjectHideFlags: 0
