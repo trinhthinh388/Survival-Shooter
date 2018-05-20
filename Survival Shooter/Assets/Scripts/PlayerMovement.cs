@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
         if(Physics.Raycast(camRay, out floorHit, camLength, floorMask))
 		{
 			Vector3 offset = floorHit.point - transform.position;
+			offset.y = 0f;
 			Quaternion rotation = Quaternion.LookRotation(offset);
 			playerRigid.MoveRotation(rotation);
 		}

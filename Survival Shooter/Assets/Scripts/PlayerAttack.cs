@@ -7,12 +7,16 @@ public class PlayerAttack : MonoBehaviour {
 	public float DamagePerBullets = 20f;
 	public float TimeBetweenShot = 0.15f;
 	public float gunLength = 100f;
+	public ParticleSystem shotPar;
+	public Light gunLight;
+	public Light shotLight;
 	float effectsDisplayTime = 0.2f ;
 	LineRenderer lineShot;
 	float timer;
 	Ray shotRay;
 	int shotMask;
 	RaycastHit shotHit;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -23,7 +27,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(Input.GetMouseButton(0) && timer >= TimeBetweenShot)
+		if(Input.GetButton("Fire1") && timer >= TimeBetweenShot)
 		{
 			Shoot();
 		}
@@ -36,10 +40,20 @@ public class PlayerAttack : MonoBehaviour {
     void Shoot()
 	{
 		timer = 0;
+
+		shotLight.enabled = true;
+
 		lineShot.enabled = true;
+		gunLight.enabled = true;
 		lineShot.SetPosition(0, transform.position);
+
+		shotPar.Stop();
+		shotPar.Play();
+
+
 		shotRay.origin = transform.position;
 		shotRay.direction = transform.forward;
+
         if(Physics.Raycast(shotRay, out shotHit, gunLength, shotMask))
 		{
 
@@ -53,5 +67,7 @@ public class PlayerAttack : MonoBehaviour {
 	void DisableEffects()
 	{
 		lineShot.enabled = false;
+		gunLight.enabled = false;
+		shotLight.enabled = false;
 	}
 }
