@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+public class EnemyHealth : MonoBehaviour {
 
-public class PlayerHealth : MonoBehaviour {
-
+    public float healthStart = 100f;
     public Image healthIMG;
-    public Text healthText;
-    public float healthDefault = 100f;
-    Animator anim;
+    public ParticleSystem shotPar;
     public float currentHealth;
+    Animator anim;
     bool isDead;
-    PlayerMovement playerMovement;
 	// Use this for initialization
 	void Start () {
-        currentHealth = healthDefault;
+        currentHealth = healthStart;
         healthIMG.fillAmount = currentHealth / 100;
-        //healthText.text = currentHealth.ToString();
-        playerMovement = GetComponent<PlayerMovement>();
         anim = GetComponent<Animator>();
 	}
 	
@@ -25,26 +21,26 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
         if (isDead)
             return;
-        healthText.text = currentHealth.ToString();
         healthIMG.fillAmount = currentHealth / 100;
-
 	}
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector3 point)
     {
         if (isDead)
             return;
         currentHealth -= amount;
+        shotPar.transform.position = point;
+        shotPar.Stop();
+        shotPar.Play();
         if (currentHealth <= 0)
-        {
             Dead();
-        }
+        
     }
 
     void Dead()
     {
-        isDead = true;
+        isDead = false;
         anim.SetTrigger("Dead");
-        playerMovement.enabled = false;
+        Destroy(gameObject, 2f);
     }
 }

@@ -56,7 +56,13 @@ public class PlayerAttack : MonoBehaviour {
 
         if(Physics.Raycast(shotRay, out shotHit, gunLength, shotMask))
 		{
+            EnemyHealth enemy = shotHit.collider.GetComponent<EnemyHealth>();
+            if(enemy != null)
+            {
+                enemy.TakeDamage(DamagePerBullets, shotHit.point);
+            }
 
+            lineShot.SetPosition(1, shotHit.point);
 		}
 		else
 		{
