@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GeekGame.Input;
 
 public class PlayerAttack : MonoBehaviour {
 
@@ -27,7 +28,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		timer += Time.deltaTime;
-		if(Input.GetButton("Fire1") && timer >= TimeBetweenShot)
+		if(JoystickFire.instance.Fire && timer >= TimeBetweenShot)
 		{
 			Shoot();
 		}
