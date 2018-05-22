@@ -8,12 +8,14 @@ public class SpawnEnemy : MonoBehaviour {
     public GameObject enemyPreFabs;
     public float spawnTime = 3f;
 
+    int spawnNumber = 0;
     PlayerHealth playerHealth;
 	// Use this for initialization
 	void Start () {
         spawnPoint = GetComponent<Transform>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        InvokeRepeating("Spawn", spawnTime, spawnTime);
+        if(spawnNumber < 5)
+            InvokeRepeating("Spawn", spawnTime, spawnTime);
 	}
 	
 	// Update is called once per frame
@@ -27,5 +29,6 @@ public class SpawnEnemy : MonoBehaviour {
             return;
 
         Instantiate(enemyPreFabs, spawnPoint.position, spawnPoint.rotation);
+        spawnNumber++;
     }
 }
