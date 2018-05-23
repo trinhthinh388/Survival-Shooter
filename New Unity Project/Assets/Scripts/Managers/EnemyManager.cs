@@ -6,44 +6,22 @@ namespace CompleteProject
     public class EnemyManager : MonoBehaviour
     {
         public static int EnemyAlive = 0;
-        public Wave[] waves;
-        public Transform spawnPoint;
-        public float TimeBetweenWaves = 5f;
-        private float countdown = 2f;
-        private int waveIndex = 0;
+        public int MaxEnemyAlive = 100;
+        public Transform[] spawnPoint;
+        public GameObject enemyPreFabs;
+        public float spawnTime = 3f;
 
-        void Update()
+        void Start()
         {
-            if (EnemyAlive > 0)
+            if (EnemyAlive > MaxEnemyAlive)
                 return;
-            if(countdown <= 0)
-            {
-                StartCoroutine(SpawnWave());
-                countdown = TimeBetweenWaves;
-                return;
-            }
-            countdown -= Time.deltaTime;
-
-        }
-        IEnumerator SpawnWave()
-        {
-            Wave wave = waves[waveIndex];
-            EnemyAlive = wave.count[waveIndex];
-            for (int i = 0; i < wave.count[waveIndex]; i++)
-            {
-                for (int j = 0; j < wave.enemy.Length; j++)
-                {
-                    SpawnEnemy(wave.enemy[j]);
-                    yield return new WaitForSeconds(1f / wave.rate);
-                }
-            }
-
-            waveIndex++;
+            InvokeRepeating("SpawnEnemy", spawnTime, spawnTime);
         }
 
-        void SpawnEnemy(GameObject enemy)
+        void SpawnEnemy()
         {
-            Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+            for (int i = 0; i < spawnPoint.Length; i++ )
+                Instantiate(enemyPreFabs, spawnPoint[i].position, spawnPoint[i].rotation);
         }
     }
 }

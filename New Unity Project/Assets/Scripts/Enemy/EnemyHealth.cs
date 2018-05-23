@@ -77,6 +77,7 @@ namespace CompleteProject
             isDead = true;
 
             EnemyManager.EnemyAlive--;
+            CoinController.currentCoin += 10;
 
             // Turn the collider into a trigger so shots can pass through it.
             capsuleCollider.isTrigger = true;
